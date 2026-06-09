@@ -1,0 +1,18 @@
+{
+  "name": "@aleo-checkout/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aleo-checkout/aleo-client": "0.1.0",
+    "@aleo-checkout/checkout-core": "0.1.0",
+    "@aleo-checkout/shared-types": "0.1.0"
+  }
+}
