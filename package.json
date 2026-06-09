@@ -1,0 +1,45 @@
+{
+  "name": "aleo-checkout-blueprint",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "clean:web-cache": "node scripts/clean-next-cache.mjs",
+    "predev": "npm run typecheck && npm run clean:web-cache",
+    "dev": "npm --workspace @aleo-checkout/web run dev",
+    "prebuild": "npm run typecheck && npm run clean:web-cache",
+    "build": "npm --workspace @aleo-checkout/web run build",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "npm --workspace @aleo-checkout/web run lint",
+    "poc:validate-env": "npm run typecheck && node scripts/poc.mjs validate-env",
+    "poc:check-credits": "npm run typecheck && node scripts/poc.mjs check-credits",
+    "poc:create-private-credits-record": "npm run typecheck && node scripts/poc.mjs create-private-credits-record",
+    "poc:list-customer-credit-records": "npm run typecheck && node scripts/poc.mjs list-customer-credit-records",
+    "poc:transfer-private-credits": "npm run typecheck && node scripts/poc.mjs transfer-private-credits",
+    "poc:transaction-status": "npm run typecheck && node scripts/poc.mjs transaction-status",
+    "poc:scan-merchant-local": "npm run typecheck && node scripts/poc.mjs scan-merchant-local",
+    "poc:decrypt-merchant-record": "npm run typecheck && node scripts/poc.mjs decrypt-merchant-record",
+    "poc:confirm-order": "npm run typecheck && node scripts/poc.mjs confirm-order",
+    "poc:testnet-credits": "npm run typecheck && node scripts/poc.mjs testnet-credits"
+  },
+  "dependencies": {
+    "@provablehq/sdk": "0.11.0",
+    "lucide-react": "^0.468.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
