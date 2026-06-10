@@ -20,6 +20,17 @@ The PoC completed one real Aleo testnet private Credits payment:
 
 Evidence is documented in [docs/CREDITS_VERIFIED_EVIDENCE.md](docs/CREDITS_VERIFIED_EVIDENCE.md).
 
+## Start Here
+
+Use the repo in one of two ways:
+
+1. `Terminal first`
+   Run the real verified Aleo testnet Credits flow through `npm run poc:*` commands.
+2. `Browser preview`
+   Open the Next.js app only for a Mock UI Preview of the checkout UX.
+
+If you want evidence, testing, or proposal-ready proof, use the terminal flow.
+
 ## What This Repo Demonstrates
 
 1. A customer starts with faucet-funded public Aleo testnet Credits.
@@ -70,9 +81,9 @@ npm run build
 
 Never use wallets with real funds. Never commit `.env.local`.
 
-## Real Testnet PoC Commands
+## Terminal Test Flow
 
-These commands require dedicated testnet-only account values in `.env.local`.
+The verified PoC is CLI-driven. After filling `.env.local`, use this exact order:
 
 ```bash
 npm run poc:validate-env
@@ -86,11 +97,13 @@ npm run poc:decrypt-merchant-record
 npm run poc:confirm-order
 ```
 
-The combined runner is:
+The one-command wrapper is:
 
 ```bash
 npm run poc:testnet-credits
 ```
+
+This is the path that produced the verified testnet result documented in [docs/CREDITS_VERIFIED_EVIDENCE.md](docs/CREDITS_VERIFIED_EVIDENCE.md).
 
 ## Mock UI Preview
 
@@ -115,6 +128,14 @@ MOCK UI PREVIEW - NO REAL ALEO TRANSACTIONS
 ```
 
 This preview is intentionally separate from the verified CLI flow. Grant-funded work should connect the real Credits payment flow to the web app so the web checkout becomes the primary end-to-end product path.
+
+## Docs
+
+- [docs/OWNER_SETUP_GUIDE.md](docs/OWNER_SETUP_GUIDE.md): step-by-step local setup for dedicated testnet accounts, faucet funding, and terminal execution
+- [docs/CREDITS_VERIFIED_EVIDENCE.md](docs/CREDITS_VERIFIED_EVIDENCE.md): the verified transaction, record discovery, decryption, and receipt evidence
+- [docs/CREDITS_TESTNET_DISCOVERY.md](docs/CREDITS_TESTNET_DISCOVERY.md): source-verified `credits.aleo` and SDK discovery notes
+- [docs/SECURITY_NOTES.md](docs/SECURITY_NOTES.md): secret handling and artifact safety rules
+- [docs/GRANT_SCOPE.md](docs/GRANT_SCOPE.md): what is complete, what remains funded scope, and what is out of scope
 
 ## Security
 
